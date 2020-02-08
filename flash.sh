@@ -54,9 +54,9 @@ fastboot flash dsp_$FLASH_SLOT dsp.img || _exit "problem while flashing dsp"
 fastboot flash devcfg_$FLASH_SLOT devcfg.img || _exit "problem while flashing devcfg"
 fastboot flash tz_$FLASH_SLOT tz.img || _exit "problem while flashing tz"
 fastboot flash rpm_$FLASH_SLOT rpm.img || _exit "problem while flashing rpm"
-fastboot flash sbl1_$FLASH_SLOT sbl1.img || _exit "problem while flashing sbl1"
 fastboot flash modem_$FLASH_SLOT modem.img || _exit "problem while flashing modem"
 fastboot flash aboot_$FLASH_SLOT aboot.img || _exit "problem while flashing aboot"
+fastboot flash sbl1_$FLASH_SLOT sbl1.img || _exit "problem while flashing sbl1"
 
 # Test the flashed bootloader
 fastboot --set-active=$FLASH_SLOT
