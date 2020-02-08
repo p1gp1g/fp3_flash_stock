@@ -1,5 +1,5 @@
 # fp3_flash_stock
-This script flash the partitions of the non-active slot. You need stock ROM images (link coming).
+This script flash the partitions of the non-active slot. You need stock ROM images (e.g. [A.105](https://www.androidfilehost.com/?fid=4349826312261719146)).
 
 Flashing the non-active slot is a way to ensure that there is always a working bootloader.
 
