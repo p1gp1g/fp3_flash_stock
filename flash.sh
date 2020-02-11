@@ -1,9 +1,14 @@
 #!/bin/sh
 
+DEVICE="FP3"
+
 _exit(){
   echo $1
   exit 1
 }
+
+## CHECK THE DEVICE
+fastboot getvar product 2>&1 | grep "product: $DEVICE" >/dev/null || _exit "This is not a $DEVICE"
 
 ## CHECK THE FILES
 [ -f product.img ] && _exit "Couldn't find ./product.img"
