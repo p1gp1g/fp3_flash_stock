@@ -11,24 +11,24 @@ _exit(){
 fastboot getvar product 2>&1 | grep "product: $DEVICE" >/dev/null || _exit "This is not a $DEVICE"
 
 ## CHECK THE FILES
-[ -f product.img ] && _exit "Couldn't find ./product.img"
-[ -f keymaster.img ] && _exit "Couldn't find ./keymaster.img"
-[ -f cmnlib64.img ] && _exit "Couldn't find ./cmnlib64.img"
-[ -f cmnlib.img ] && _exit "Couldn't find ./cmnlib.img"
-[ -f lksecapp.img ] && _exit "Couldn't find ./lksecapp.img"
-[ -f mdtp.img ] && _exit "Couldn't find ./mdtp.img"
-[ -f vendor.img ] && _exit "Couldn't find ./vendor.img"
-[ -f system.img ] && _exit "Couldn't find ./system.img"
-[ -f boot.img ] && _exit "Couldn't find ./boot.img"
-[ -f vbmeta.img ] && _exit "Couldn't find ./vbmeta.img"
-[ -f dtbo.img ] && _exit "Couldn't find ./dtbo.img"
-[ -f dsp.img ] && _exit "Couldn't find ./dsp.img"
-[ -f devcfg.img ] && _exit "Couldn't find ./devcfg.img"
-[ -f tz.img ] && _exit "Couldn't find ./tz.img"
-[ -f rpm.img ] && _exit "Couldn't find ./rpm.img"
-[ -f sbl1.img ] && _exit "Couldn't find ./sbl1.img"
-[ -f modem.img ] && _exit "Couldn't find ./modem.img"
-[ -f aboot.img ] && _exit "Couldn't find ./aboot.img"
+[ -f product.img ] || _exit "Couldn't find ./product.img"
+[ -f keymaster.img ] || _exit "Couldn't find ./keymaster.img"
+[ -f cmnlib64.img ] || _exit "Couldn't find ./cmnlib64.img"
+[ -f cmnlib.img ] || _exit "Couldn't find ./cmnlib.img"
+[ -f lksecapp.img ] || _exit "Couldn't find ./lksecapp.img"
+[ -f mdtp.img ] || _exit "Couldn't find ./mdtp.img"
+[ -f vendor.img ] || _exit "Couldn't find ./vendor.img"
+[ -f system.img ] || _exit "Couldn't find ./system.img"
+[ -f boot.img ] || _exit "Couldn't find ./boot.img"
+[ -f vbmeta.img ] || _exit "Couldn't find ./vbmeta.img"
+[ -f dtbo.img ] || _exit "Couldn't find ./dtbo.img"
+[ -f dsp.img ] || _exit "Couldn't find ./dsp.img"
+[ -f devcfg.img ] || _exit "Couldn't find ./devcfg.img"
+[ -f tz.img ] || _exit "Couldn't find ./tz.img"
+[ -f rpm.img ] || _exit "Couldn't find ./rpm.img"
+[ -f sbl1.img ] || _exit "Couldn't find ./sbl1.img"
+[ -f modem.img ] || _exit "Couldn't find ./modem.img"
+[ -f aboot.img ] || _exit "Couldn't find ./aboot.img"
 
 ## GET THE SLOTS
 fastboot getvar current-slot 2>&1 | grep "current-slot: a" >/dev/null
@@ -42,7 +42,6 @@ fi
 echo "CURRENT SLOT: $CURRENT_SLOT"
 echo "FLASHING SLOT: $FLASH_SLOT"
 
-exit 0
 ## FLASH THE OTHER SLOT PARTITIONS
 fastboot flash product_$FLASH_SLOT product.img -S 522239K || _exit "problem while flashing product"
 fastboot flash keymaster_$FLASH_SLOT keymaster.img || _exit "problem while flashing keymaster"
