@@ -9,7 +9,10 @@ Flashing the non-active slot is a way to ensure that there is always a working b
 3. You need to have the images in the working directory ;
 4. Run `./flash.sh` .
 
-You may need to run it as root `sudo ./flash`
+You may need : 
+- to run it as root `sudo ./flash`
+- to run it twice to flash slots a and b
+- to erase userdata `fastboot -w` after the flashs 
 
 ## Troubleshooting Tips
 
