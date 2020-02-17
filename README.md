@@ -10,3 +10,9 @@ Flashing the non-active slot is a way to ensure that there is always a working b
 4. Run `./flash.sh` .
 
 You may need to run it as root `sudo ./flash`
+
+## Troubleshooting Tips
+
+### 30 secs warning : Your device is corrupted
+If you see the warning that shuts down the phone after the 30 seconds, do not forget to **press the power button** to boot.
+To get rid of this warning, run `adb reboot "dm-verity enforcing"`
