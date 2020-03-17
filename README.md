@@ -5,7 +5,7 @@ Flashing the non-active slot is a way to ensure that there is always a working b
 
 ## Guide
 1. Your device must have an unlocked bootloader ;
-2. You need to boot to bootloader and ensure that you device is detectable by your computer with `fastboot device` ;
+2. You need to boot to bootloader and ensure that you device is detectable by your computer with `fastboot devices` ;
 3. You need to have the images in the working directory ;
 4. Run `./flash.sh` .
 
